@@ -1,0 +1,55 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "inicialModel",
+        "designer|userAlias": "inicialModel"
+    },
+    "id": "ExtBox1-ext-gen11003",
+    "designerId": "53a4056c-1a23-4259-b9c8-cad692bc46e9",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field",
+                "name": "idCamp"
+            },
+            "designerId": "63c12ed5-3093-4581-a850-8cb9380964be"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field",
+                "name": "textCamp"
+            },
+            "designerId": "c41d5195-a8f6-459b-bd66-8d6750b59f2b"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field",
+                "name": "valorCamp"
+            },
+            "designerId": "738b2b83-041a-4d70-8ff5-56e1204dbc95"
+        }
+    ]
+}

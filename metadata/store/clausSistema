@@ -1,0 +1,17 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "clausSistema",
+        "designer|userAlias": "claussistema",
+        "data": "  [\r\n      {\"id\":1,\"clau\":\"ecros84\"}, \r\n      {\"id\":2,\"clau\":\"carbon600\"}, \r\n      {\"id\":3,\"clau\":\"vidi\"}\r\n ]\r\n",
+        "model": "clausModel",
+        "storeId": "clausSystem"
+    },
+    "id": "ExtBox1-ext-gen3678",
+    "designerId": "266d7f2a-ddb6-4997-ac51-f99d68dcf60b"
+}

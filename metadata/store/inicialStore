@@ -1,0 +1,17 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "inicialStore",
+        "designer|userAlias": "inicialstore",
+        "data": "  [\r\n      {\"idCamp\":\"trimestre\",\"textCamp\":\"\", \"valorCamp\":\"3r Trimestre 2012\"}, \r\n      {\"idCamp\":\"iniTrim\",\"textCamp\":\"Inici lectures:\",\"valorCamp\":\"30/08/2012\"}, \r\n      {\"idCamp\":\"fiTrim\",\"textCamp\":\"Fi lectures:\",\"valorCamp\":\"30/10/2012\"}\r\n ]\r\n",
+        "model": "inicialModel",
+        "storeId": "inistore"
+    },
+    "id": "ExtBox1-ext-gen10588",
+    "designerId": "9bbb030f-84ac-41d2-a8cf-6a4596952de0"
+}

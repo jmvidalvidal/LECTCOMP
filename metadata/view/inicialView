@@ -1,0 +1,296 @@
+{
+    "type": "navigationview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|animation": false,
+        "designer|userClassName": "inicialView",
+        "designer|userAlias": "inicialview",
+        "designer|initialView": true,
+        "defaultBackButtonText": "",
+        "useTitleForBackButtonText": true
+    },
+    "id": "ExtBox1-ext-gen4868",
+    "designerId": "bd5ec83d-5e1e-4d64-bf00-8db51a6e025c",
+    "cn": [
+        {
+            "type": "navigationbar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyNavigationBar",
+                "itemId": "BarraNavegador"
+            },
+            "designerId": "a78977d9-7eaa-44ca-90bd-4311bcdb674a"
+        },
+        {
+            "type": "list",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "LECTCOMP",
+                "designer|userClassName": "MyList",
+                "id": "variablesView",
+                "store": "inistore",
+                "disableSelection": true
+            },
+            "designerId": "5ace3202-624d-4aa5-aee4-b04e67106a61",
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "itemTpl",
+                        "implHandler": [
+                            "<div><center><b>{textCamp} {valorCamp}</b></center></div>"
+                        ],
+                        "designer|displayName": "itemTpl"
+                    },
+                    "designerId": "100eadab-dccd-4765-8b98-d43ce2745cf2"
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyToolbar",
+                        "docked": "bottom"
+                    },
+                    "designerId": "61b298dc-1fe2-412f-a6a0-576859a88bc8",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "id": "botoCarregar",
+                                "itemId": "mybutton2",
+                                "ui": "round",
+                                "width": 97,
+                                "iconAlign": "center",
+                                "text": "Carregar"
+                            },
+                            "designerId": "cc9f4a88-8294-4998-8e79-c53f41e9deaf",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onBotoEnviarTap1",
+                                        "fn": "onBotoEnviarTap1",
+                                        "implHandler": [
+                                            "var panellLect = Ext.create('LECTCOMP.view.panellCarregar',{fullscreen: true});\r",
+                                            "this.push(panellLect);"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "dfa8ed42-0e9a-43a0-9125-3941a58f1ed8"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton1",
+                                "id": "botoLectures",
+                                "itemId": "mybutton1",
+                                "ui": "round",
+                                "width": 97,
+                                "iconAlign": "center",
+                                "text": "Lectures"
+                            },
+                            "designerId": "00667d92-9a17-4fd9-b6da-d3a1b744174d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onBotoLecturesTap",
+                                        "fn": "onBotoLecturesTap",
+                                        "implHandler": [
+                                            "var panellLect = Ext.create('LECTCOMP.view.panellLectures',{fullscreen: true});\r",
+                                            "this.push(panellLect);"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "d946659f-f0d5-4a03-a923-3706d8d5a837"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "id": "botoEnviar",
+                                "itemId": "mybutton3",
+                                "ui": "round",
+                                "width": 97,
+                                "iconAlign": "center",
+                                "text": "Enviar"
+                            },
+                            "designerId": "e4eb719c-c8e2-4b1b-9cdf-2efe17b5530f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onBotoEnviarTap",
+                                        "fn": "onBotoEnviarTap",
+                                        "implHandler": [
+                                            "Ext.Msg.show({ title: 'Avís:',\r",
+                                            "    message: 'Dades enviades correctament',\r",
+                                            "    buttons:  [{text : 'Acceptar'}]});"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "a5f71505-af68-4a5a-ad64-04ef9ee99950"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyToolbar1",
+                        "docked": "bottom",
+                        "height": 243
+                    },
+                    "designerId": "2448da4f-98b2-4d11-a122-afa7a0bd015d",
+                    "cn": [
+                        {
+                            "type": "image",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyImage",
+                                "height": 163,
+                                "left": 85,
+                                "top": 40,
+                                "ui": "",
+                                "width": 310,
+                                "src": "img/escut.jpg"
+                            },
+                            "designerId": "6cb0c6f2-aa3b-4c2e-b943-4bc8a5f058ea"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNavigationviewShow",
+                "fn": "onNavigationviewShow",
+                "implHandler": [
+                    "var storeInici = Ext.data.StoreManager.lookup('inistore'), dataInici, dataFi, avui;\r",
+                    "\r",
+                    "if (storeInici.getCount() === 0){\r",
+                    "\r",
+                    "    /*Si la base de dades inicial és buida vol dir que no hem carregat cap fitxer*/\r",
+                    "    /*amb les dades dels comptadors*/\r",
+                    "    /*Per tant ho notifiquem*/\r",
+                    "    Ext.Msg.show({ title: 'Avís:',\r",
+                    "        message: 'No hi ha dades per fer lectures',\r",
+                    "        buttons:  [{text : 'Acceptar'}]});\r",
+                    "    } else if (storeInici.getCount() === 3){\r",
+                    "        avui=new Date();\r",
+                    "        dataFi = conversorData(storeInici.getAt(2).get('valorCamp'));\r",
+                    "        dataInici = conversorData(storeInici.getAt(1).get('valorCamp'));\r",
+                    "\r",
+                    "        if ((dataInici <= avui) && (avui <= dataFi)) {\r",
+                    "            /*Estem dins del període*/\r",
+                    "            Ext.ComponentQuery.query('#botoLectures')[0].setDisabled(false);\r",
+                    "        } else {\r",
+                    "            Ext.ComponentQuery.query('#botoLectures')[0].setDisabled(true);\r",
+                    "            Ext.Msg.show({ title: 'Avís:',\r",
+                    "                message: 'Estàs fora del rang de dates permès',\r",
+                    "                buttons:  [{text : 'Acceptar'}]});        \r",
+                    "            }\r",
+                    "        } else {\r",
+                    "            /*La base de dades iniciStore ha d'estar inicialitzada amb 3 camps\r",
+                    "            Sino és el cas donem un error*/\r",
+                    "            Ext.ComponentQuery.query('#botoLectures')[0].setDisabled(true);\r",
+                    "            Ext.Msg.show({ title: 'Error:',\r",
+                    "                message: 'Error en la BD iniciStore',\r",
+                    "                buttons:  [{text : 'Acceptar'}]});       \r",
+                    "            }\r",
+                    "\r",
+                    "            function conversorData(data_dd_mm_yyyy){\r",
+                    "                var dia_aux = parseInt(data_dd_mm_yyyy.substring(0, 2),10);\r",
+                    "                var mes_aux = parseInt(data_dd_mm_yyyy.substring(3, 5),10);\r",
+                    "                var any_aux = parseInt(data_dd_mm_yyyy.substring(6, 10),10);\r",
+                    "                var data_aux = new Date();\r",
+                    "\r",
+                    "                data_aux.setDate(dia_aux);\r",
+                    "                data_aux.setMonth(mes_aux-1);\r",
+                    "                data_aux.setFullYear(any_aux);\r",
+                    "                data_aux.setHours(0);\r",
+                    "                data_aux.setMinutes(0);\r",
+                    "                data_aux.setSeconds(0);\r",
+                    "                data_aux.setMilliseconds(0);\r",
+                    "\r",
+                    "                return data_aux; \r",
+                    "            }"
+                ],
+                "name": "show"
+            },
+            "designerId": "4dc9c6e9-8d82-4dba-af96-b8d84692630d"
+        }
+    ]
+}

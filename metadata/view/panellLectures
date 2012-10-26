@@ -1,0 +1,449 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "panellLectures",
+        "designer|userAlias": "",
+        "ui": ""
+    },
+    "id": "ExtBox1-ext-gen7869",
+    "designerId": "b08be75d-466b-41f8-8ee5-69655132f41b",
+    "cn": [
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTabPanel1",
+                "height": 478,
+                "id": "selectorComptadors",
+                "width": 319
+            },
+            "designerId": "1052a83f-d8e5-462b-bcf6-0d5320ba8a79",
+            "cn": [
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Núm Comptador",
+                        "designer|userClassName": "MyContainer2",
+                        "ui": ""
+                    },
+                    "designerId": "16aa0579-5da0-4cb0-9de7-ddeddf6ce7f6",
+                    "cn": [
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyToolbar3",
+                                "docked": "top",
+                                "title": "Introdueix el comptador"
+                            },
+                            "designerId": "7a0c3ea3-3e16-4cbd-8e7f-d3f9b78af6dc"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField",
+                                "border": 5,
+                                "docked": "top",
+                                "id": "campNumComptador",
+                                "margin": "",
+                                "label": "Número"
+                            },
+                            "designerId": "419207fb-1af7-49b2-bc48-5f15a5972596"
+                        },
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyToolbar2",
+                                "docked": "bottom"
+                            },
+                            "designerId": "f75440f8-75df-4385-9677-fe3a1f9dc390",
+                            "cn": [
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyButton3",
+                                        "centered": true,
+                                        "itemId": "mybutton4",
+                                        "text": "SELECCIONAR COMTPADOR/S"
+                                    },
+                                    "designerId": "0edde726-fe23-4807-84e7-96be5b96c639",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "onMybutton4Tap",
+                                                "fn": "onMybutton4Tap",
+                                                "implHandler": [
+                                                    "//Quan hem introduit el número de comptador o entrat l'adreça\r",
+                                                    "//Ocultem el contenidor del selector de comptadors\r",
+                                                    "//I mostrem la llista de comptadors seleccionats.\r",
+                                                    "\r",
+                                                    "var tabulador = Ext.getCmp(\"selectorComptadors\");\r",
+                                                    "var tabuladorActiu = tabulador.indexOf(tabulador.getActiveItem());\r",
+                                                    "\r",
+                                                    "if (tabuladorActiu===0) {\r",
+                                                    "    //Tabulador Número de comptador \r",
+                                                    "    var nCompt =  Ext.ComponentQuery.query('#campNumComptador')[0].getValue();\r",
+                                                    "    if (nCompt !== ''){\r",
+                                                    "\r",
+                                                    "        storeComtpadors = Ext.data.StoreManager.lookup('llistaCompt');\r",
+                                                    "        //Esborrem possibles filtres\r",
+                                                    "        storeComtpadors.clearFilter();\r",
+                                                    "\r",
+                                                    "        //Filtrem pel camp nComptador\r",
+                                                    "        var thisRegEx = new RegExp(nCompt, \"i\");\r",
+                                                    "        storeComtpadors.filterBy(function(record) {\r",
+                                                    "            if (thisRegEx.test(record.get('nComptador'))) {\r",
+                                                    "                return true;\r",
+                                                    "            }\r",
+                                                    "            return false;\r",
+                                                    "        });\r",
+                                                    "\r",
+                                                    "        Ext.ComponentQuery.query('#selectorComptadors')[0].setHidden(true);\r",
+                                                    "        Ext.ComponentQuery.query('#llistaSeleccio')[0].setHidden(false);\r",
+                                                    "        Ext.ComponentQuery.query('#textSelFeta')[0].setHidden(true);\r",
+                                                    "    } else {\r",
+                                                    "        //No has introduit cap valor \r",
+                                                    "        Ext.Msg.show({ title: 'Avís:',\r",
+                                                    "            message: 'No has introduit cap Número ',\r",
+                                                    "            buttons:  [{text : 'Acceptar'}]}); \r",
+                                                    "            this.refresh();\r",
+                                                    "\r",
+                                                    "        }\r",
+                                                    "    }"
+                                                ],
+                                                "name": "tap"
+                                            },
+                                            "designerId": "59de5a75-d2c6-4c78-99f5-cfba88145cc5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Adreça Comptador",
+                        "designer|userClassName": "MyContainer3"
+                    },
+                    "designerId": "dc8a39f6-b68d-4bb7-a60f-0aba32663113",
+                    "cn": [
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyToolbar4",
+                                "docked": "top",
+                                "title": "Selecciona adreça i núm."
+                            },
+                            "designerId": "22b635cf-0247-4c57-a750-bb0841792fb5"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField",
+                                "border": 5,
+                                "docked": "top",
+                                "id": "nCarrer",
+                                "margin": "",
+                                "label": "Número",
+                                "required": true
+                            },
+                            "designerId": "587941a6-ca01-4ebf-b576-c346f4e1063c"
+                        },
+                        {
+                            "type": "list",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyList",
+                                "docked": "top",
+                                "height": 340,
+                                "id": "listAdreca",
+                                "itemId": "mylist1",
+                                "width": 320,
+                                "store": "vialstore",
+                                "grouped": true
+                            },
+                            "designerId": "06f72c7b-24b8-45a5-92ac-111a677560b6",
+                            "cn": [
+                                {
+                                    "type": "template",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "itemTpl",
+                                        "implHandler": [
+                                            "<div>{nomCarrerVia}</div>"
+                                        ],
+                                        "designer|displayName": "itemTpl"
+                                    },
+                                    "designerId": "9ac56a89-d4fe-4f84-aba0-1d868ac8f54a"
+                                },
+                                {
+                                    "type": "listindexbar",
+                                    "reference": {
+                                        "name": "indexBar",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyIndexBar"
+                                    },
+                                    "designerId": "dfddba86-af86-4cb4-87ee-aaca98cf04fd"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onListAdrecaItemTap",
+                                        "fn": "onListAdrecaItemTap",
+                                        "implHandler": [
+                                            "var codCarrer=record.data.codiCarrer;\r",
+                                            "var nomCar=record.data.nomCarrerVia;\r",
+                                            "var numCarrer =  Ext.ComponentQuery.query('#nCarrer')[0].getValue();\r",
+                                            "\r",
+                                            "if (numCarrer !== ''){\r",
+                                            "\r",
+                                            "    var sComtpadors = Ext.data.StoreManager.lookup('llistaCompt');\r",
+                                            "    //Esborrem possibles filtres\r",
+                                            "    sComtpadors.clearFilter();\r",
+                                            "\r",
+                                            "       //Filtrem pel camp codiCarrer i numero    \r",
+                                            "        sComtpadors.filterBy(function(record, id) {\r",
+                                            "            if ((record.get('codiCarrer').match(codCarrer)) &&\r",
+                                            "            (record.get('numero').match(numCarrer))){\r",
+                                            "                return true;\r",
+                                            "            } else {\r",
+                                            "                return false;\r",
+                                            "            }\r",
+                                            "        });\r",
+                                            "\r",
+                                            "\r",
+                                            "        Ext.ComponentQuery.query('#selectorComptadors')[0].setHidden(true);\r",
+                                            "        Ext.ComponentQuery.query('#llistaSeleccio')[0].setHidden(false);    \r",
+                                            "        var h='<center><b>'+nomCar+'<br>Núm: '+numCarrer+'</b></center>';\r",
+                                            "        Ext.ComponentQuery.query('#textSelFeta')[0].setHtml(h);     \r",
+                                            "        Ext.ComponentQuery.query('#textSelFeta')[0].setHidden(false);\r",
+                                            "\r",
+                                            "\r",
+                                            "    } else {\r",
+                                            "        //No has introduit cap valor \r",
+                                            "        Ext.Msg.show({ title: 'Avís:',\r",
+                                            "            message: 'No has introduit el número del bloc ',\r",
+                                            "            buttons:  [{text : 'Acceptar'}]}); \r",
+                                            "            this.refresh();\r",
+                                            "\r",
+                                            "        }\r",
+                                            ""
+                                        ],
+                                        "name": "itemtap"
+                                    },
+                                    "designerId": "16f89570-b3fd-4bc4-9a97-d7091e4b7f41"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer3",
+                "hidden": true,
+                "id": "llistaSeleccio",
+                "hideOnMaskTap": false
+            },
+            "designerId": "11470573-d1e0-4f26-8b5e-730545e67106",
+            "cn": [
+                {
+                    "type": "titlebar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTitleBar1",
+                        "docked": "top",
+                        "id": "mytitlebar1",
+                        "itemId": "",
+                        "title": "SELECCIONA"
+                    },
+                    "designerId": "dce905f4-8a85-4f7c-a5a2-2125bb2544be"
+                },
+                {
+                    "type": "label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyLabel1",
+                        "height": 46,
+                        "html": "",
+                        "id": "textSelFeta"
+                    },
+                    "designerId": "b72613e6-7f9f-4a65-8f65-1889d0e7d481"
+                },
+                {
+                    "type": "list",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyList2",
+                        "height": 384,
+                        "id": "listSeleccio",
+                        "width": 318,
+                        "store": "llistaCompt"
+                    },
+                    "designerId": "c82f2f92-2e7d-461d-a673-a70a3431627b",
+                    "cn": [
+                        {
+                            "type": "template",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "itemTpl",
+                                "implHandler": [
+                                    "<div><b>{nComptador} {llegit}</b></div>"
+                                ],
+                                "designer|displayName": "itemTpl"
+                            },
+                            "designerId": "97177926-7d55-42c5-b978-826aad92d8e6"
+                        }
+                    ]
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyToolbar6",
+                        "docked": "bottom"
+                    },
+                    "designerId": "7bcbbadc-dfea-4b22-b9ca-aa2e65843344",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton5",
+                                "centered": true,
+                                "itemId": "mybutton5",
+                                "ui": "back",
+                                "text": "TORNAR A LA SELECCIÓ"
+                            },
+                            "designerId": "ce8b5164-0ba7-483f-9a13-d3c17431c925",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onMybutton5Tap",
+                                        "fn": "onMybutton5Tap",
+                                        "implHandler": [
+                                            "Ext.ComponentQuery.query('#selectorComptadors')[0].setHidden(false);\r",
+                                            "Ext.ComponentQuery.query('#llistaSeleccio')[0].setHidden(true);\r",
+                                            "Ext.ComponentQuery.query('#textSelFeta')[0].setHtml('');"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "edc12c0b-5df6-478d-bc6a-16487270d55a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

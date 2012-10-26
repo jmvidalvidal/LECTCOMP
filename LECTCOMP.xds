@@ -1,0 +1,138 @@
+{
+    "name": "LECTCOMP",
+    "settings": {
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 640,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "bd5ec83d-5e1e-4d64-bf00-8db51a6e025c": {
+            "paths": [
+                "metadata/view/inicialView",
+                "app/view/override/inicialView.js",
+                "app/view/inicialView.js"
+            ],
+            "className": "inicialView"
+        },
+        "65927935-16d7-485c-a373-501b0ca0ae3f": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "9bbb030f-84ac-41d2-a8cf-6a4596952de0": {
+            "paths": [
+                "metadata/store/inicialStore",
+                "app/store/override/inicialStore.js",
+                "app/store/inicialStore.js"
+            ],
+            "className": "inicialStore"
+        },
+        "53a4056c-1a23-4259-b9c8-cad692bc46e9": {
+            "paths": [
+                "metadata/model/inicialModel",
+                "app/model/override/inicialModel.js",
+                "app/model/inicialModel.js"
+            ],
+            "className": "inicialModel"
+        },
+        "94405d94-0fae-4d48-a552-6a6fe7a582fb": {
+            "paths": [
+                "metadata/store/vialerStore",
+                "app/store/override/vialerStore.js",
+                "app/store/vialerStore.js"
+            ],
+            "className": "vialerStore"
+        },
+        "1401bf68-8bb1-4573-8c13-01fc119c2218": {
+            "paths": [
+                "metadata/model/vialerModel",
+                "app/model/override/vialerModel.js",
+                "app/model/vialerModel.js"
+            ],
+            "className": "vialerModel"
+        },
+        "b08be75d-466b-41f8-8ee5-69655132f41b": {
+            "paths": [
+                "metadata/view/panellLectures",
+                "app/view/override/panellLectures.js",
+                "app/view/panellLectures.js"
+            ],
+            "className": "panellLectures"
+        },
+        "b52e59b6-91a8-4842-b6f5-ee53cb9dd4af": {
+            "paths": [
+                "metadata/view/panellCarregar",
+                "app/view/override/panellCarregar.js",
+                "app/view/panellCarregar.js"
+            ],
+            "className": "panellCarregar"
+        },
+        "266d7f2a-ddb6-4997-ac51-f99d68dcf60b": {
+            "paths": [
+                "metadata/store/clausSistema",
+                "app/store/override/clausSistema.js",
+                "app/store/clausSistema.js"
+            ],
+            "className": "clausSistema"
+        },
+        "c073347d-82a0-450b-ad8d-6ccdf70bb1d5": {
+            "paths": [
+                "metadata/model/clausModel",
+                "app/model/override/clausModel.js",
+                "app/model/clausModel.js"
+            ],
+            "className": "clausModel"
+        },
+        "22663fe8-a52c-4915-86a9-2e92183211e4": {
+            "paths": [
+                "metadata/store/llistaComptadors",
+                "app/store/override/llistaComptadors.js",
+                "app/store/llistaComptadors.js"
+            ],
+            "className": "llistaComptadors"
+        },
+        "c3572bb0-ad04-416c-a96b-79e9ed30dca9": {
+            "paths": [
+                "metadata/model/modelComptadors",
+                "app/model/override/modelComptadors.js",
+                "app/model/modelComptadors.js"
+            ],
+            "className": "modelComptadors"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "bd5ec83d-5e1e-4d64-bf00-8db51a6e025c",
+            "b08be75d-466b-41f8-8ee5-69655132f41b",
+            "b52e59b6-91a8-4842-b6f5-ee53cb9dd4af"
+        ],
+        "store": [
+            "9bbb030f-84ac-41d2-a8cf-6a4596952de0",
+            "94405d94-0fae-4d48-a552-6a6fe7a582fb",
+            "266d7f2a-ddb6-4997-ac51-f99d68dcf60b",
+            "22663fe8-a52c-4915-86a9-2e92183211e4"
+        ],
+        "controller": [],
+        "model": [
+            "53a4056c-1a23-4259-b9c8-cad692bc46e9",
+            "1401bf68-8bb1-4573-8c13-01fc119c2218",
+            "c073347d-82a0-450b-ad8d-6ccdf70bb1d5",
+            "c3572bb0-ad04-416c-a96b-79e9ed30dca9"
+        ],
+        "resource": [
+            "65927935-16d7-485c-a373-501b0ca0ae3f"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "modelComptadors",
+        "designer|userAlias": "modelcomptadors"
+    },
+    "id": "ExtBox1-ext-gen2579",
+    "designerId": "c3572bb0-ad04-416c-a96b-79e9ed30dca9",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field9",
+                "name": "nServei",
+                "type": "int"
+            },
+            "designerId": "ed989392-2123-46b5-80cc-82447b1cd7e5"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field10",
+                "name": "nComptador",
+                "sortDir": "DESC",
+                "sortType": "asText",
+                "type": "string"
+            },
+            "designerId": "e93c395f-0055-4454-9061-fb2bdb0075eb"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "codiCarrer",
+                "type": "string"
+            },
+            "designerId": "916ada17-2934-45b7-a348-ee02b1e39fae"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "numero",
+                "type": "string"
+            },
+            "designerId": "b35adf31-975e-42bc-9ee9-59308224e937"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "pis",
+                "type": "string"
+            },
+            "designerId": "0b5a42a6-8d80-478f-a584-498077d0247c"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "lecturaAnterior",
+                "type": "int"
+            },
+            "designerId": "0e4867d8-08e3-43fa-9826-bda158a83820"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "minim",
+                "type": "int"
+            },
+            "designerId": "cb313efa-3d79-46c3-ad4a-2e366c591c13"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "maxim",
+                "type": "int"
+            },
+            "designerId": "32ffb3bb-24ca-4fb6-b560-211cd2af9687"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "field11",
+                "name": "llegit",
+                "type": "int"
+            },
+            "designerId": "dc17c3d8-1353-478d-a849-6bdddf6ce6a7"
+        }
+    ]
+}

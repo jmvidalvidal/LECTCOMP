@@ -1,0 +1,155 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "panellCarregar",
+        "id": "panellcarregar"
+    },
+    "id": "ExtBox1-ext-gen13950",
+    "designerId": "b52e59b6-91a8-4842-b6f5-ee53cb9dd4af",
+    "cn": [
+        {
+            "type": "titlebar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTitleBar",
+                "docked": "top",
+                "height": 57,
+                "title": "CARREGAR TRIMESTRE"
+            },
+            "designerId": "f7666201-8ff2-4359-a5f7-5540d10225a6"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyToolbar5",
+                "docked": "bottom",
+                "height": 54,
+                "title": ""
+            },
+            "designerId": "19a55ce1-649c-44fe-b86e-43b8b224d6c7",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton3",
+                        "centered": true,
+                        "id": "btnCarregar",
+                        "itemId": "",
+                        "text": "INICIAR PROCÉS"
+                    },
+                    "designerId": "6dd961c8-15b3-4180-815a-1e380e80cd80",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onBtnCarregarTap",
+                                "fn": "onBtnCarregarTap",
+                                "implHandler": [
+                                    "var codi =  Ext.ComponentQuery.query('#codiseguretat')[0].getValue();\r",
+                                    "var correcte=0;\r",
+                                    "\r",
+                                    "//Accedim a l'store per localitzar la clau de seguretat\r",
+                                    "var store = Ext.data.StoreManager.lookup('clausSystem');\r",
+                                    "\r",
+                                    "for(var i = 0; i < store.getCount(); i++) {  \r",
+                                    "    if (store.getAt(i).get('clau') == codi){\r",
+                                    "        correcte=1;\r",
+                                    "    }\r",
+                                    "}\r",
+                                    "\r",
+                                    "if (correcte===0){\r",
+                                    "    Ext.Msg.show({ title: 'Avís:',\r",
+                                    "        message: 'Codi Seguretat incorrecte',\r",
+                                    "        buttons:  [{text : 'Acceptar'}]});        \r",
+                                    "    } else {\r",
+                                    "        Ext.Msg.show({ title: 'Avís:',\r",
+                                    "            message: 'Carrega completada correctament',\r",
+                                    "            buttons:  [{text : 'Acceptar'}]});            \r",
+                                    "        }\r",
+                                    "\r",
+                                    "        this.getParent().pop();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "31b2ac77-9a4a-4f01-b95c-def066587ff6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLabel",
+                "height": 120,
+                "html": "<p align=\"justify\"> Aquest procediment esborrarà totes les dades introduides del trimestre acutal. <br /> <br />Introduiex el codi de seguretat per a carregar les dades  </p>",
+                "left": 5,
+                "top": 20,
+                "width": 309
+            },
+            "designerId": "b63ff207-905a-42f8-a647-c95513231b3b"
+        },
+        {
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer2",
+                "docked": "bottom",
+                "height": 198,
+                "id": ""
+            },
+            "designerId": "610eb3fc-8e6a-4443-978a-2143d6db4a59",
+            "cn": [
+                {
+                    "type": "passwordfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPasswordField",
+                        "id": "codiseguretat",
+                        "label": "CODI",
+                        "name": "codiSeguretat",
+                        "required": true
+                    },
+                    "designerId": "25e67379-1d7d-45a6-8f40-2e7be85930a7"
+                }
+            ]
+        }
+    ]
+}

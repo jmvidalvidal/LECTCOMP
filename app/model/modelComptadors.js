@@ -28,6 +28,10 @@ Ext.define('LECTCOMP.model.modelComptadors', {
                 sortDir: 'DESC',
                 sortType: 'asText',
                 type: 'string'
+            },            
+            {
+                name: 'nomCarrer',
+                type: 'string'
             },
             {
                 name: 'codiCarrer',

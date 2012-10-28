@@ -920,8 +920,8 @@ Ext.define('LECTCOMP.store.vialerStore', {
             {
                 idCarrer: 150,
                 codiCarrer: '00060',
-                nomCarrer: 'SANT VICEN€ (DE)',
-                nomCarrerVia: 'CR SANT VICEN€ (DE)'
+                nomCarrer: 'SANT VICENÇ (DE)',
+                nomCarrerVia: 'CR SANT VICENÇ (DE)'
             },
             {
                 idCarrer: 151,

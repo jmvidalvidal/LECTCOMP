@@ -24,14 +24,6 @@ Ext.application({
 	],
 
 	name: 'LECTCOMP',
-	nServeiSelect:0,
-	nComptadorSelect:'',
-	nomCarrerSelect:'',
-	numeroSelect:'',
-	pisSelect:'',
-	minimSelect:0,
-	maximSelect:0,
-	llegitSelect:'',
 	
 	launch: function() {
 		Ext.create('LECTCOMP.view.inicialView', {fullscreen: true});

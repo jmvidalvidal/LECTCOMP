@@ -19,8 +19,7 @@ Ext.application({
 		'inicialView',
 		'panellLectures',
 		'panellCarregar',
-		'panellSeleccio',
-		'insertLectures'
+		'panellSeleccio'
 	],
 
 	name: 'LECTCOMP',

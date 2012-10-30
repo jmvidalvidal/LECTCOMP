@@ -36,7 +36,7 @@ Ext.define('LECTCOMP.store.inicialStore', {
             {
                 idCamp: 'fiTrim',
                 textCamp: 'Fi lectures:',
-                valorCamp: '30/10/2012'
+                valorCamp: '30/12/2012'
             }
         ],
         model: 'LECTCOMP.model.inicialModel',

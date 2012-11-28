@@ -7,13 +7,15 @@ Ext.application({
 		'inicialModel',
 		'vialerModel',
 		'clausModel',
-		'modelComptadors'
+		'modelComptadors',
+		'lecturesModel'
 	],
 	stores: [
 		'inicialStore',
 		'vialerStore',
 		'clausSistema',
-		'llistaComptadors'
+		'llistaComptadors',
+		'lecturesStore'
 	],
 	views: [
 		'inicialView',
@@ -21,11 +23,12 @@ Ext.application({
 		'panellCarregar',
 		'panellSeleccio'
 	],
-
 	name: 'LECTCOMP',
-	
+   controllers: [
+        'controlador'
+   ],
+   	
 	launch: function() {
 		Ext.create('LECTCOMP.view.inicialView', {fullscreen: true});
 	}
-
 });

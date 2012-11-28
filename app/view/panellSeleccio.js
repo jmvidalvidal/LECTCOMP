@@ -6,10 +6,12 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 		itemTpl: ['<div><b>{nComptador} {nomCarrer} {numero} {pis} {llegit}</b></div>'],
 		id: 'listSeleccio',
 		//onItemDisclosure: true,
-		store: 'llistaCompt',
+		store: 'llistaComptadors',
 		layout: {
 			type: 'vbox',
-		},
+   			align:'strecth',
+   			pack:'start'
+   		},
 		items: [
 			{
 				xtype: 'titlebar',
@@ -42,16 +44,16 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 						if ((minC<=text) && (text<=maxC)) {
 							//Lectura dins dels límnits acceptats				
 							Ext.Msg.show({
-         	   			title:'Confirmes la lectura '+text+'?',
-            				msg: '',
-            				buttons: [{text : 'Cancel·lar'}, {text : 'Acceptar'}, {text : 'Amb Incid.'}],
-            				fn: showResult,
-            				animEl: 'elId',
-            				icon: Ext.MessageBox.QUESTION
+         	   					title:'Confirmes la lectura '+text+'?',
+	            				msg: '',
+    	        				buttons: [{text : 'Cancel·lar'}, {text : 'Acceptar'}, {text : 'Amb Incid.'}],
+        	    				fn: showResult,
+            					animEl: 'elId',
+            					icon: Ext.MessageBox.QUESTION
         					});
         					function showResult(btn){
             				if(btn == 'Acceptar'){
-									Ext.Msg.alert("Avís", 'Lectura emmagatzemada');                 
+									guardarLectura(record,text,record.get('nComptador'), 0, '');            					
 			            	} else if(btn == 'Amb Incid.') {
 									Ext.Msg.prompt('Introduiex la incidència', '', 
 											function(btn, textIncidencia){
@@ -59,7 +61,7 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 														if (textIncidencia==''){
 															Ext.Msg.alert("Avís", 'Cancel·lada: No hi ha incidència');
 														}else{
-															Ext.Msg.alert("Avís", 'Lectura emmagatzemada amb incidència');
+															guardarLectura(record,text,record.get('nComptador'), 0, textIncidencia);
 														}
 												} else {
 														Ext.Msg.alert("Avís", 'Lectura cancel·lada');
@@ -82,7 +84,7 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 	        					});
 	   	     				function showVolta(btn){
    	      	   			if(btn == 'Si'){
-										Ext.Msg.alert("Avís", 'Lectura emmagatzemada');                 
+										guardarLectura(record,text,record.get('nComptador'), 1, '');                 
 		   	      	   	} else if(btn == 'No'){
 										Ext.Msg.prompt('Guardar amb incidència?', '', 
 											function(btn, textIncidencia){
@@ -90,7 +92,7 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 														if (textIncidencia==''){
 															Ext.Msg.alert("Avís", 'Cancel·lada: No hi ha incidència');
 														}else{
-															Ext.Msg.alert("Avís", 'Lectura emmagatzemada amb incidència');
+															guardarLectura(record,text,record.get('nComptador'), 0, textIncidencia);
 														}
 												} else {
 														Ext.Msg.alert("Avís", 'Lectura cancel·lada');
@@ -104,7 +106,7 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 														if (textIncidencia==''){
 															Ext.Msg.alert("Avís", 'Cancel·lada: No hi ha incidència');
 														}else{
-															Ext.Msg.alert("Avís", 'Lectura emmagatzemada amb incidència');
+															guardarLectura(record,text,record.get('nComptador'), 0, textIncidencia);
 														}
 												} else {
 													Ext.Msg.alert("Avís", 'Lectura cancel·lada');
@@ -132,7 +134,7 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 	   	     				});
    	   	  				function showExces(btn){
          		   			if(btn == 'Si'){
-										Ext.Msg.alert("Avís", 'Lectura emmagatzemada');
+										guardarLectura(record,text,record.get('nComptador'), 0, '');
 									} else if(btn == 'No'){        
 										Ext.Msg.alert("Avís", 'Lectura cancel·lada');                 
 		         	   		} else {
@@ -142,7 +144,7 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 													if (textIncidencia==''){
 															Ext.Msg.alert("Avís", 'Cancel·lada: No hi ha incidència');
 														}else{
-															Ext.Msg.alert("Avís", 'Lectura emmagatzemada amb incidència');
+															guardarLectura(record,text,record.get('nComptador'), 0, textIncidencia);
 														}
 												} else {
 													Ext.Msg.alert("Avís", 'Lectura cancel·lada');
@@ -156,6 +158,19 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 				}// 			     
     		}
 		);
-	}//Fi onListItemTap
 		
+		function guardarLectura(reg, vLectura,vNumComptador, vEsVolta, vIncidencia){
+			debugger;
+			var storeLect = Ext.data.StoreManager.lookup('lecturesStore');
+			var vData = new Date();
+
+			var registre={"valor":vLectura, "nComptador": vNumComptador, "dataLectura": vData.toUTCString(), "esVolta":vEsVolta, "incidencia": vIncidencia}
+			storeLect.add(registre);
+			storeLect.sync();
+			
+			reg.set("llegit", "<IMG SRC='img/ok.png' WIDTH=15 HEIGHT=15>");
+   	}
+	
+	} //Fi onListItemTap
+	
 });

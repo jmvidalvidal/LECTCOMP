@@ -18,7 +18,7 @@ Ext.define('LECTCOMP.view.inicialView', {
 				title: 'LECTCOMP',
 				id: 'variablesView',
 				itemTpl: ['<div><center><b>{textCamp} {valorCamp}</b></center></div>'],
-				store: 'inistore',
+				store: 'inicialStore',
 				disableSelection: true,
 				layout: {
 					type: 'vbox',
@@ -89,10 +89,6 @@ Ext.define('LECTCOMP.view.inicialView', {
 				fn: 'onBotoEnviarTap',
 				event: 'tap',
 				delegate: '#botoEnviar'
-			},
-			{
-				fn: 'onNavigationviewShow',
-				event: 'show'
 			}
 		]
 	},
@@ -102,50 +98,42 @@ Ext.define('LECTCOMP.view.inicialView', {
 	},
 
 	onBotoLecturesTap: function(button, e, options) {
-		this.push({xtype:'panellLectures'});
+		var storeVlr = Ext.data.StoreManager.lookup('vialerStore');
+		var storeCmp = Ext.data.StoreManager.lookup('llistaComptadors');
+		if ((storeVlr.getCount()===0) && (storeCmp.getCount()===0)){
+			Ext.Msg.alert("Avís:", 'Vialer i Comtpadors no carregats');			
+		} else if (storeVlr.getCount()===0) {
+			Ext.Msg.alert("Avís:", 'Vialer no carregat');			
+		} else if (storeCmp.getCount()===0) {
+			Ext.Msg.alert("Avís:", 'Comptadors no carregats');			
+		} else {
+      	var storeIni = Ext.data.StoreManager.lookup('inicialStore');
+      	var avui, dataFi, dataInici;
+      	if (storeIni.getCount() === 3){
+					avui=new Date();
+					dataFi = this.conversorData(storeIni.getAt(2).get('valorCamp'));
+					dataInici = this.conversorData(storeIni.getAt(1).get('valorCamp'));
+            
+					if ((dataInici <= avui) && (avui <= dataFi)) {
+						this.push({xtype:'panellLectures'});
+					} else {
+						Ext.Msg.show({ title: 'Avís:',
+							message: 'Estàs fora del rang de dates permès',
+							buttons:  [{text : 'Acceptar'}]});        
+					}
+			} else {
+				Ext.Msg.alert("Avis","Dades Trimestre errònies");     	
+			}
+		}
 	},
 
 	onBotoEnviarTap: function(button, e, options) {
-	Ext.Msg.show({ title: 'Avís:',
-		message: 'Dades enviades correctament',
-		buttons:  [{text : 'Acceptar'}]});
+		Ext.Msg.show({ title: 'Avís:',
+			message: 'Dades enviades correctament',
+			buttons:  [{text : 'Acceptar'}]});
 	},
 
-	onNavigationviewShow: function(component, options) {
-		var storeInici = Ext.data.StoreManager.lookup('inistore'), dataInici, dataFi, avui;
-
-		if (storeInici.getCount() === 0){
-
-      /*Si la base de dades inicial és buida vol dir que no hem carregat cap fitxer*/
-      /*amb les dades dels comptadors*/
-      /*Per tant ho notifiquem*/
-      Ext.Msg.show({ title: 'Avís:',
-			message: 'No hi ha dades per fer lectures',
-			buttons:  [{text : 'Acceptar'}]});
-		} else if (storeInici.getCount() === 3){
-			avui=new Date();
-			dataFi = conversorData(storeInici.getAt(2).get('valorCamp'));
-			dataInici = conversorData(storeInici.getAt(1).get('valorCamp'));
-                
-			if ((dataInici <= avui) && (avui <= dataFi)) {
-				/*Estem dins del període*/
-				Ext.ComponentQuery.query('#botoLectures')[0].setDisabled(false);
-			} else {
-				Ext.ComponentQuery.query('#botoLectures')[0].setDisabled(true);
-				Ext.Msg.show({ title: 'Avís:',
-					message: 'Estàs fora del rang de dates permès',
-					buttons:  [{text : 'Acceptar'}]});        
-			}
-		} else {
-			/*La base de dades iniciStore ha d'estar inicialitzada amb 3 camps
-			 Sino és el cas donem un error*/
-			Ext.ComponentQuery.query('#botoLectures')[0].setDisabled(true);
-			Ext.Msg.show({ title: 'Error:',
-				message: 'Error en la BD iniciStore',
-				buttons:  [{text : 'Acceptar'}]});       
-		}
-
-		function conversorData(data_dd_mm_yyyy){
+	conversorData: function(data_dd_mm_yyyy){
 			var dia_aux = parseInt(data_dd_mm_yyyy.substring(0, 2),10);
 			var mes_aux = parseInt(data_dd_mm_yyyy.substring(3, 5),10);
 			var any_aux = parseInt(data_dd_mm_yyyy.substring(6, 10),10);
@@ -160,7 +148,7 @@ Ext.define('LECTCOMP.view.inicialView', {
 			data_aux.setMilliseconds(0);
 
 			return data_aux; 
-		}
 	}
+		
 
 });

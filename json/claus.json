@@ -1,0 +1,8 @@
+﻿Ext.data.JsonP.clausCb({
+	"claus":
+		[
+			{id: 1, clau: 'ecros84'},
+			{id: 2, clau: 'carbon600'},
+			{id: 3, clau: 'vidi'}
+		]
+});

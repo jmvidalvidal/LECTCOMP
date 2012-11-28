@@ -1,0 +1,5 @@
+Ext.data.JsonP.lecturesCb({
+	"lectures":[
+		{"valor":2424, "nComptador": "93252390", "dataLectura": "25/09/2012 09:00", "esVolta":"0", "incidencia": ""}
+	]
+});

@@ -6,9 +6,10 @@ Ext.define('LECTCOMP.view.panellLectures', {
 		cCar: '',
 		nCar: '',
 		items: [
+			
 			{
 				xtype: 'container',
-				title: 'NÚM. COMPTADOR',
+				title: 'COMPTADOR',
 				id: 'selectorComptadors',
 				hidden: false,
 				ui: '',
@@ -46,7 +47,7 @@ Ext.define('LECTCOMP.view.panellLectures', {
 			},
 			{
 				xtype: 'container',
-				title: 'ADRECA COMPTADOR',
+				title: 'ADREÇA',
 				id: 'selectorAdreca',
 				layout: {
 					type: 'vbox',
@@ -60,25 +61,25 @@ Ext.define('LECTCOMP.view.panellLectures', {
 					{
 						xtype: 'container',
 						title: 'NÚM. COMPTADOR',
-						items:[					
+						items:[
+							{
+								xtype: 'textfield',
+								docked: 'top',
+								id: 'nCarrer',
+								label: 'Número',
+								required: true
+							},						
 							{
 								xtype: 'list',
-								docked: 'top',
+								docked: 'bottom',
 								height: 400,
 								id: 'listAdreca',
 								itemId: 'mylist1',
 								itemTpl: ['<div>{nomCarrerVia}</div>'],
-								store: 'vialstore',
+								store: 'vialerStore',
 								grouped: true,
 								indexBar: true,
-							},
-							{
-								xtype: 'textfield',
-								docked: 'bottom',
-								id: 'nCarrer',
-								label: 'Número',
-								required: true
-							}		
+							}	
 						]
 					},
 					{
@@ -123,7 +124,7 @@ Ext.define('LECTCOMP.view.panellLectures', {
 						id: 'listSeleccio',
 						width: 318,
 						itemTpl: ['<div><b>{nComptador} {llegit}</b></div>'],
-						store: 'llistaCompt'
+						store: 'llistaComptadors'
 					},
 					{
 						xtype: 'toolbar',
@@ -139,12 +140,72 @@ Ext.define('LECTCOMP.view.panellLectures', {
 						]
 					}
 				]
-           }
+        },
+        {	xtype: 'container',
+				layout: {
+					type: 'vbox',
+				},
+				title: 'NOU',
+				items: [
+					{
+						xtype: 'toolbar',
+						docked: 'top',
+						title: 'Comptador nou'
+					},
+					{
+						xtype: 'textfield',
+						id: 'nouNumComptador',
+						margin:8,
+						required: true,
+						label: 'Número',
+						layout: {
+							type: 'vbox'
+						}					
+					},
+					{
+						xtype: 'textfield',
+						id: 'nouLectura',
+						margin:8,
+						required: true,
+						label: 'Lectura',
+						layout: {
+							type: 'vbox'
+						}					
+					},				
+					{
+						xtype: 'textfield',
+						id: 'nouIncidencia',
+						margin:8,
+						required: true,
+						label: 'Adreça',
+						layout: {
+							type: 'vbox'
+						}					
+					},				
+					{
+						xtype: 'toolbar',
+						docked: 'bottom',
+						items: [
+							{
+								xtype: 'button',
+								centered: true,
+								itemId: 'btnNouNumComptador',
+								text: 'AFEGEIX COMPTADOR'
+							}
+						]
+					}					
+				]
+		 }			
 		],
       listeners: [
 			{
 				fn: 'onTabpanelInitialize',
 				event: 'initialize'
+			},
+			{
+				fn: 'onBtnNouNumComptadorTap',
+				event: 'tap',
+				delegate: '#btnNouNumComptador'
 			},
 			{
 				fn: 'onBtnSelNumComptadorTap',
@@ -160,12 +221,34 @@ Ext.define('LECTCOMP.view.panellLectures', {
 				fn: 'onListAdrecaItemTap',
 				event: 'itemtap',
 				delegate: '#listAdreca'
-			},
+			}
       ]
 	},
       		
 	onTabpanelInitialize: function(container, value, oldValue, options) {
 		this.cCar='';
+	},	
+	
+	onBtnNouNumComptadorTap: function(button, e, options) {
+		var storeLect = Ext.data.StoreManager.lookup('lecturesStore');
+		var vData = new Date();
+		var vNumComptador =  Ext.ComponentQuery.query('#nouNumComptador')[0].getValue();
+		var vLectura =  Ext.ComponentQuery.query('#nouLectura')[0].getValue();
+		var vIncidencia =  Ext.ComponentQuery.query('#nouIncidencia')[0].getValue();
+		
+		if ((vNumComptador !== '') && (vLectura !== '') && (vIncidencia !== '')) {
+			var registre={"valor":vLectura, "nComptador": vNumComptador, "dataLectura": vData.toUTCString(), "esVolta":"0", "incidencia": vIncidencia}
+			storeLect.add(registre);
+			storeLect.sync();
+
+			Ext.ComponentQuery.query('#nouNumComptador')[0].setValue('');
+			Ext.ComponentQuery.query('#nouLectura')[0].setValue('');
+			Ext.ComponentQuery.query('#nouIncidencia')[0].setValue('');
+			
+			Ext.Msg.alert("Avís:", "Dades registrades");
+		} else {
+			Ext.Msg.alert("Avís:", "Falten dades");
+		}
 	},	
 
 	onBtnSelNumComptadorTap: function(button, e, options) {
@@ -175,7 +258,7 @@ Ext.define('LECTCOMP.view.panellLectures', {
 		var nCompt =  Ext.ComponentQuery.query('#campNumComptador')[0].getValue();
 
 		if (nCompt !== ''){
-			storeComtpadors = Ext.data.StoreManager.lookup('llistaCompt');
+			storeComtpadors = Ext.data.StoreManager.lookup('llistaComptadors');
 			//Esborrem possibles filtres
 			storeComtpadors.clearFilter();
 
@@ -193,9 +276,6 @@ Ext.define('LECTCOMP.view.panellLectures', {
 			
 			this.getParent().push({xtype:'panellSeleccio'});
 			
-			//Ext.ComponentQuery.query('#selectorComptadors')[0].setHidden(true);
-			//Ext.ComponentQuery.query('#selectorAdreca')[0].setHidden(true);
-			//Ext.ComponentQuery.query('#llistaSeleccio')[0].setHidden(false);
 		} else {
 			//No has introduit cap valor 
 			Ext.Msg.show({ title: 'Avís:',
@@ -221,7 +301,7 @@ Ext.define('LECTCOMP.view.panellLectures', {
 				buttons:  [{text : 'Acceptar'}]}); 
 			this.refresh();			 
 		} else {
-			var sComtpadors = Ext.data.StoreManager.lookup('llistaCompt');
+			var sComtpadors = Ext.data.StoreManager.lookup('llistaComptadors');
 			//Esborrem possibles filtres
 			sComtpadors.clearFilter();
 			var codi=this.cCar
@@ -248,5 +328,5 @@ Ext.define('LECTCOMP.view.panellLectures', {
 		this.cCar=record.data.codiCarrer;
 		this.nCar=record.data.nomCarrerVia;
 	}
-	
+		
 });

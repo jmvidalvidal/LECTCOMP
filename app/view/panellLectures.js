@@ -72,7 +72,7 @@ Ext.define('LECTCOMP.view.panellLectures', {
 							{
 								xtype: 'list',
 								docked: 'bottom',
-								height: 400,
+								height: 200,
 								id: 'listAdreca',
 								itemId: 'mylist1',
 								itemTpl: ['<div>{nomCarrerVia}</div>'],
@@ -217,7 +217,7 @@ Ext.define('LECTCOMP.view.panellLectures', {
 				event: 'tap',
 				delegate: '#btnSelAdrComptador'
 			},
-         {
+            {
 				fn: 'onListAdrecaItemTap',
 				event: 'itemtap',
 				delegate: '#listAdreca'
@@ -227,6 +227,16 @@ Ext.define('LECTCOMP.view.panellLectures', {
       		
 	onTabpanelInitialize: function(container, value, oldValue, options) {
 		this.cCar='';
+
+   		h=screen.height;
+   		if (h==480){//iPHONE 4
+   			Ext.ComponentQuery.query('#listAdreca')[0].setHeight(220);	
+   		} else if (h==1024) {//IPAD
+   			Ext.ComponentQuery.query('#listAdreca')[0].setHeight(780);	
+   		} else {//altres dispositius
+			h=parseInt(screen.height*60/100);      		
+   			Ext.ComponentQuery.query('#listAdreca')[0].setHeight(h);	
+   		}    		
 	},	
 	
 	onBtnNouNumComptadorTap: function(button, e, options) {

@@ -3,6 +3,6 @@
 		[
 			{idCamp: 'trimestre', textCamp: '', valorCamp: '3r Trimestre 2012'},
 			{idCamp: 'iniTrim', textCamp: 'Inici lectures:', valorCamp: '30/08/2012'},
-			{idCamp: 'fiTrim', textCamp: 'Fi lectures:', valorCamp: '30/12/2012'}
+			{idCamp: 'fiTrim', textCamp: 'Fi lectures:', valorCamp: '30/01/2013'}
 		]
 });

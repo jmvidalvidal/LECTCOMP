@@ -24,10 +24,14 @@ Ext.application({
 		'panellSeleccio'
 	],
 	name: 'LECTCOMP',
-   controllers: [
+   	controllers: [
         'controlador'
-   ],
-   	
+   	],
+
+   	adr_ip_dades: 'http://localhost',
+   	adr_ip_aplicacio: 'http://localhost',
+   	//adr_ip_aplicacio:http://217.126.56.102:8082
+
 	launch: function() {
 		Ext.create('LECTCOMP.view.inicialView', {fullscreen: true});
 	}

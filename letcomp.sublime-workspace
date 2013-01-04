@@ -1,0 +1,890 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"getTr",
+				"getTreatment"
+			],
+			[
+				"act",
+				"activeAlarm"
+			],
+			[
+				"c",
+				"callback"
+			],
+			[
+				"mo",
+				"morningMinuteAlert"
+			],
+			[
+				"cur",
+				"currentMinute"
+			],
+			[
+				"curr",
+				"currentMinute"
+			],
+			[
+				"mor",
+				"morningHour"
+			],
+			[
+				"getH",
+				"getHours"
+			],
+			[
+				"get",
+				"getEveningDate"
+			],
+			[
+				"sa",
+				"saveLocation"
+			],
+			[
+				"_",
+				"_current_day_of_treatment"
+			],
+			[
+				"_cu",
+				"_current_day_of_treatment"
+			],
+			[
+				"LECTURA",
+				"LECTURA_LECCION"
+			],
+			[
+				"LE",
+				"LECTURA_LECCION"
+			],
+			[
+				"_id",
+				"_id"
+			],
+			[
+				"def",
+				"defaultValue"
+			],
+			[
+				"no",
+				"noShowTask"
+			],
+			[
+				"id",
+				"idOfbefore"
+			],
+			[
+				"pr",
+				"property"
+			],
+			[
+				"is",
+				"isDone"
+			],
+			[
+				"morning",
+				"morningPicker"
+			],
+			[
+				"pi",
+				"TimePicker"
+			],
+			[
+				"user",
+				"user_data"
+			],
+			[
+				"getA",
+				"getAllCount"
+			],
+			[
+				"ge",
+				"getIsLoaded"
+			],
+			[
+				"lo",
+				"load"
+			],
+			[
+				"vi",
+				"Viewport"
+			],
+			[
+				"lan",
+				"launch"
+			],
+			[
+				"tre",
+				"treatmentK"
+			],
+			[
+				"tas",
+				"tasksList"
+			],
+			[
+				"Tr",
+				"TreatmentLog"
+			],
+			[
+				"ini",
+				"initUserNotExists"
+			],
+			[
+				"tr",
+				"treatment"
+			],
+			[
+				"use",
+				"userModel"
+			],
+			[
+				"time",
+				"timePicked"
+			],
+			[
+				"spl",
+				"splitDate"
+			],
+			[
+				"ti",
+				"timePicks"
+			],
+			[
+				"pa",
+				"painLog"
+			],
+			[
+				"order",
+				"orderSelected"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 659,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"up",
+				"SFTP: Upload File"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"git puc",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git pull ",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git",
+				"Git: Open..."
+			],
+			[
+				"git p",
+				"Git: Pull"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"git ",
+				"Git: Change Branch"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"te",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"git pull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git bra",
+				"Git: Change Branch"
+			],
+			[
+				"git check",
+				"Git: Checkout Current File"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"snipp",
+				"Snippet: Object key — key: \"value\""
+			],
+			[
+				"new",
+				"File: New View into File"
+			],
+			[
+				"",
+				"Snippet: Anonymous Function"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/roman/Sites/filnais/app/controller/TreatmentManager.js",
+		"/Users/roman/Sites/filnais/app/model/Treatment.js",
+		"/Users/roman/Sites/filnais/app/model/Goal.js",
+		"/Users/roman/Sites/filnais/app/model/Action.js",
+		"/Users/roman/Sites/filnais/app/controller/Tasks.js",
+		"/Users/roman/Sites/filnais/app/controller/HomeScreen.js",
+		"/Users/roman/Sites/filnais/app/controller/Preferences.js",
+		"/Users/roman/Sites/filnais/app/controller/Alarma.js",
+		"/Users/roman/Sites/serverFNS/public/treatment/fibrolineTTC.json",
+		"/Users/roman/Sites/filnais/app/controller/FollowUpController.js",
+		"/Users/roman/Sites/filnais/app/controller/SelectorWidget.js",
+		"/Users/roman/Sites/filnais/app/view/widgets/SelectorWidget.js",
+		"/Users/roman/Sites/filnais/app/controller/Wizard.js",
+		"/Users/roman/Sites/filnais/app/view/chart/Chart.js",
+		"/Users/roman/Sites/filnais/app/model/FollowupTypes.js",
+		"/Users/roman/Sites/filnais/resources/input.json",
+		"/Users/roman/Sites/filnais/app/controller/Chart.js",
+		"/Users/roman/Sites/filnais/app/model/Chart.js",
+		"/Users/roman/Sites/serverFNS/public/presentations/presentations.json",
+		"/Users/roman/Sites/filnais-old/phone/app/store/program/Actions.js",
+		"/Users/roman/Sites/filnais/app/controller/Treatment.js",
+		"/Users/roman/Sites/filnais/app/model/Lesson.js",
+		"/Users/roman/Sites/serverFNS/public/presentations/jardin/presentation.json",
+		"/Users/roman/Sites/filnais/app/model/Followup.js",
+		"/Users/roman/Sites/filnais-old/phone/app/store/Tasks.js",
+		"/Users/roman/Sites/filnais/app/controller/Login.js",
+		"/Users/roman/Sites/filnais/app/model/Task.js",
+		"/Users/roman/Sites/filnais/app.js",
+		"/Users/roman/Sites/filnais/touch/src/data/Types.js",
+		"/Users/roman/Sites/serverFNS/fibroline.log",
+		"/Users/roman/Sites/filnais/app/view/tasks/MainTasks.js",
+		"/Users/roman/Sites/filnais/app/view/chart/Card.js",
+		"/Users/roman/Sites/filnais/app/store/ScaleTypes.js",
+		"/Users/roman/Sites/filnais/touch/src/data/Field.js",
+		"/Users/roman/Sites/filnais/touch/src/data/Store.js",
+		"/Users/roman/Sites/serverFNS/routes/treatment.js",
+		"/Users/roman/Sites/filnais-old/phone/app/model/Programlog.js",
+		"/Users/roman/Sites/filnais/0.1",
+		"/Users/roman/Sites/serverFNS/routes/login.js",
+		"/Users/roman/Sites/filnais/app/view/preferences/General.js",
+		"/Users/roman/Sites/serverFNS/app.js",
+		"/Users/roman/Sites/serverFNS/routes/util.js",
+		"/Users/roman/Sites/serverFNS/serverFNS.sublime-workspace",
+		"/Users/roman/Sites/filnais/app/controller/User.js",
+		"/Users/roman/Sites/filnais/app/model/User.js",
+		"/Users/roman/Sites/filnais/app/controller/TreatmentLog.js",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/roman/Sites/filnais-old/phone/app/controller/About.js",
+		"/Users/roman/Sites/filnais/app/model/TreatmentLog.js",
+		"/Users/roman/Sites/filnais/app/model/Preferences.js",
+		"/Users/roman/Sites/filnais/app/view/preferences/TimePicker.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/about/General.js",
+		"/Users/roman/Sites/meetcha/app/controller/User.js",
+		"/Users/roman/Sites/meetcha/app/controller/HomeScreen.js",
+		"/Users/roman/Sites/meetcha/app/controller/GroupList.js",
+		"/Users/roman/Sites/meetcha/app/controller/MeetchaTitleBar.js",
+		"/Users/roman/Sites/meetcha/app/controller/AtMeetup.js",
+		"/Users/roman/Sites/filnais/app/view/Main.js",
+		"/Users/roman/Sites/meetcha/app/view/HomeScreen.js",
+		"/Users/roman/Sites/meetcha/app/view/MeetchaTitleBar.js",
+		"/Users/roman/Sites/filnais-old/src/data/Model.js",
+		"/Users/roman/Sites/filnais/app/view/preferences/TimeField.js",
+		"/Users/roman/Sites/filnais/app/view/preferences/Card.js",
+		"/Users/roman/Sites/filnais/app/model/Session.js",
+		"/Users/roman/Sites/filnais/app/view/config/General.js",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/Users/roman/Sites/filnais/app/view/config/Card.js",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/User/Git.sublime-settings",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/User/JavaScript.sublime-settings",
+		"/Users/roman/Sites/filnais-old/phone/app/store/painary/ScaleTypes.js",
+		"/Users/roman/Sites/filnais-old/phone/app/model/User.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/about/Card.js",
+		"/Users/roman/Sites/filnais-old/.gitignore",
+		"/Users/roman/Sites/filnais/app/view/tasks/Card.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/about/TimeField.js",
+		"/Users/roman/Sites/filnais/app/view/config/TimePicker.js",
+		"/Users/roman/Sites/filnais/app/view/config/TimeField.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/about/TimePicker.js",
+		"/Users/roman/Sites/filnais/resources/sass/app.scss",
+		"/Users/roman/Sites/filnais/app/view/tasks/List.js",
+		"/Users/roman/Sites/filnais/touch/src/layout/VBox.js",
+		"/Users/roman/Sites/filnais/touch/src/layout/FlexBox.js",
+		"/Users/roman/Sites/filnais/freemap.mm",
+		"/Users/roman/Sites/filnais/app/store/TreatmentLogs.js",
+		"/Users/roman/Sites/filnais/app/view/loginPanel.js",
+		"/Users/roman/Sites/meetcha/app/controller/MeetupList.js",
+		"/Users/roman/Sites/meetcha/app/view/CommentForm.js",
+		"/Users/roman/Sites/filnais/app/view/config/Main.js",
+		"/Users/roman/Sites/meetcha/app/view/MemberList.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/tasks/Card.js",
+		"/Users/roman/Sites/meetcha/app/model/UserSettings.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/tasks/MainTasks.js",
+		"/Users/roman/Sites/filnais-old/phone/app/view/tasks/List.js",
+		"/Users/roman/Sites/filnais/app/store/Tasks.js",
+		"/Users/roman/Sites/filnais-old/phone/app/model/Tasks.js",
+		"/Users/roman/Sites/filnais/data/treatment.js",
+		"/Users/roman/Sites/filnais-old/phone/app.js",
+		"/Users/roman/Sites/filnais-old/phone/app/util/Proxy.js",
+		"/Users/roman/Sites/filnais-old/phone/app/model/Seguiment/Seguiment.js",
+		"/Users/roman/Sites/meetcha/app/controller/CommonInteractions.js",
+		"/Users/roman/Sites/filnais-old/phone/app/model/Painlog.js",
+		"/Users/roman/Sites/filnais/.gitignore",
+		"/Users/roman/Sites/filnais-2.1.0/app.json",
+		"/Users/roman/Sites/filnais/phone/app/controller/painary/ConfigController.js",
+		"/Users/roman/Sites/filnais/phone/app/util/Proxy.js",
+		"/Users/roman/Sites/filnais/phone/app/store/alarm/confEvent.js",
+		"/Users/roman/Sites/filnais/phone/app.js",
+		"/Users/roman/Sites/filnais/phone/app/controller/About.js",
+		"/Users/roman/Sites/filnais/phone/app/view/about/TimeField.js",
+		"/Users/roman/Sites/filnais/phone/app/controller/wizard/Wizard.js",
+		"/Users/roman/Sites/filnais/phone/app/view/about/TimePicker.js",
+		"/Users/roman/Sites/filnais/phone/app/model/User.js",
+		"/Users/roman/Sites/filnais/phone/app/view/about/General.js",
+		"/Users/roman/Sites/filnais/phone/app/store/PainLog.js",
+		"/Users/roman/Sites/filnais/phone/app/model/Painlog.js",
+		"/Users/roman/Sites/filnais/phone/app/controller/register/ChartController.js",
+		"/Users/roman/Sites/filnais/phone/app/store/register/termSelect.js",
+		"/Users/roman/Sites/filnais/phone/app/model/register/termSelect.js",
+		"/Users/roman/Sites/filnais/todo/todo.txt",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/roman/Library/Application Support/Sublime Text 2/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/roman/Sites/filnais/src/field/Field.js",
+		"/Users/roman/Sites/filnais/phone/app/controller/login/LoginController.js",
+		"/Users/roman/Sites/filnais/phone/app/view/Main.js",
+		"/Users/roman/Sites/filnais/phone/app/view/tasks/List.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<project>",
+			"/Users/roman/Sites/serverFNS",
+			"/Users/roman/Sites/filnais",
+			"<project>",
+			"/Users/roman/Sites/filnais",
+			"/Users/roman/Sites/filnais/app",
+			"<open folders>",
+			"/Users/roman/Sites/filnais,,-/Users/roman/Sites/filnais/resources, -/Users/roman/Sites/filnais/touch",
+			"/Users/roman/Sites/filnais,,-resources, -touch",
+			"/Users/roman/Sites/filnais,,-*.resources",
+			"/Users/roman/Sites/filnais",
+			"<open folders>,-touch",
+			"<open folders>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"evening",
+			"Evening",
+			"evening",
+			"\"id\" ",
+			"code",
+			"            {name: 'isMorning'   , type: 'boolean' , defaultValue: false},\n",
+			"lesson",
+			"tasks",
+			"filnais-old",
+			"Ext.DateExtras",
+			"//",
+			"mongodb/bin",
+			"// // number of days before activate it when start the lesson.\n            {name: 'gapDays'   , type: 'int'   , defaultValue: 0},",
+			"getAutoFilter()",
+			"me",
+			"param",
+			"private",
+			"getPreferences",
+			"Preferences",
+			"mysqlConnect",
+			"mysqConnect",
+			"sencha",
+			"user",
+			"find",
+			"sear",
+			"TreatmentLog",
+			"morning",
+			"change",
+			"newPreferences",
+			"called",
+			"            ",
+			"morning",
+			"},",
+			", type:",
+			"            {",
+			"            ",
+			"treatment",
+			"onTimepickerfieldsChange",
+			"[itemId=timeSelectorEvening]",
+			"onTimepickerfieldsChange",
+			"load(",
+			"load",
+			"Ext.data.Model",
+			"Model",
+			"TimePicker",
+			"config",
+			"config.",
+			"Session",
+			"side_bar",
+			"2",
+			"date",
+			"TreatmentLogs",
+			"tasklist",
+			"tasks_list",
+			"debugger;",
+			"debugger",
+			"User",
+			"filnais.model.User",
+			"User",
+			"user",
+			"space",
+			"2",
+			"store",
+			"Tasks",
+			"commentform",
+			"UserSettings",
+			"Ext.form.FieldSe",
+			"store",
+			"meetcha",
+			"store",
+			"memberS",
+			"memberStore",
+			"store",
+			"Wizard",
+			"createUser",
+			"Algos.app.userModel",
+			"timepickerfield",
+			"Ext.ComponentQuery.query(\"timepickerfield\"\n				,this.getAboutContainer().getActiveItem()\n				)",
+			"user.get(\"eveningAlert\").split(\":\")",
+			"Algos.app.userModel",
+			"	",
+			"ConfigController",
+			";\n",
+			"getDayValueArrayFromLocal",
+			"times",
+			"\n			",
+			"timestamp",
+			"initWizard",
+			"term",
+			"this.scope    = scope;\n        this.callback = callback;\n        this.params   = params;",
+			"hi",
+			"        ",
+			"this."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\"_id\"",
+			"mongodb/",
+			"mysqlConnect",
+			",",
+			" = ",
+			"Preferences"
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"action",
+				"filnais/app/model/Action.js"
+			],
+			[
+				"task",
+				"filnais/app/controller/Tasks.js"
+			],
+			[
+				"alar",
+				"filnais/app/controller/Alarma.js"
+			],
+			[
+				"fib",
+				"serverFNS/public/treatment/fibrolineTTC.json"
+			],
+			[
+				"fibro",
+				"serverFNS/public/treatment/fibrolineTTC.json"
+			],
+			[
+				"tasks",
+				"filnais/app/controller/Tasks.js"
+			],
+			[
+				"type",
+				"filnais/touch/src/data/Types.js"
+			],
+			[
+				"app",
+				"filnais/app.js"
+			],
+			[
+				"treatment",
+				"filnais/app/controller/Treatment.js"
+			],
+			[
+				"store",
+				"filnais/touch/src/data/Store.js"
+			],
+			[
+				"treat",
+				"filnais/app/controller/Treatment.js"
+			],
+			[
+				"treatmen",
+				"serverFNS/routes/treatment.js"
+			],
+			[
+				"field",
+				"filnais/touch/src/data/Field.js"
+			],
+			[
+				"typ",
+				"filnais/touch/src/data/Types.js"
+			],
+			[
+				"fields",
+				"filnais/touch/src/data/Field.js"
+			],
+			[
+				"login",
+				"serverFNS/routes/login.js"
+			],
+			[
+				"ut",
+				"serverFNS/routes/util.js"
+			],
+			[
+				"trea",
+				"filnais/app/controller/Treatment.js"
+			],
+			[
+				"homescree",
+				"filnais/app/controller/HomeScreen.js"
+			],
+			[
+				"preferences",
+				"filnais/app/controller/Preferences.js"
+			],
+			[
+				"homes",
+				"filnais/app/controller/HomeScreen.js"
+			],
+			[
+				"genera",
+				"filnais/app/view/preferences/General.js"
+			],
+			[
+				"prefer",
+				"filnais/app/model/Preferences.js"
+			],
+			[
+				"prefere",
+				"filnais/app/controller/Preferences.js"
+			],
+			[
+				"general",
+				"filnais/app/view/preferences/General.js"
+			],
+			[
+				"prefe",
+				"filnais/app/controller/Preferences.js"
+			],
+			[
+				"pre",
+				"filnais/app/model/Preferences.js"
+			],
+			[
+				"user",
+				"filnais/app/model/User.js"
+			],
+			[
+				"timefi",
+				"filnais/app/view/preferences/TimeField.js"
+			],
+			[
+				"session",
+				"filnais/app/model/Session.js"
+			],
+			[
+				"gene",
+				"filnais/app/view/config/General.js"
+			],
+			[
+				"flex",
+				"filnais/touch/src/layout/FlexBox.js"
+			],
+			[
+				"vbox",
+				"filnais/touch/src/layout/VBox.js"
+			],
+			[
+				"app.sc",
+				"filnais/resources/sass/app.scss"
+			],
+			[
+				"treatmentl",
+				"filnais/app/controller/TreatmentLog.js"
+			],
+			[
+				"main",
+				"filnais/app/view/Main.js"
+			],
+			[
+				"card",
+				"filnais/app/view/config/Card.js"
+			],
+			[
+				"gener",
+				"filnais-old/phone/app/view/about/General.js"
+			],
+			[
+				"taskscard",
+				"filnais/app/view/tasks/Card.js"
+			],
+			[
+				"configcard",
+				"filnais/app/view/config/Card.js"
+			],
+			[
+				"treatlo",
+				"filnais/app/model/TreatmentLog.js"
+			],
+			[
+				"tre",
+				"filnais/app/controller/Treatment.js"
+			],
+			[
+				"prox",
+				"filnais-old/phone/app/util/Proxy.js"
+			],
+			[
+				"app.js",
+				"filnais-old/phone/app.js"
+			],
+			[
+				"tas",
+				"filnais/app/controller/Tasks.js"
+			],
+			[
+				"ho",
+				"filnais/app/controller/HomeScreen.js"
+			],
+			[
+				"us",
+				"filnais/app/controller/User.js"
+			],
+			[
+				"segui",
+				"filnais-old/phone/app/model/Seguiment/Seguiment.js"
+			],
+			[
+				"home",
+				"filnais/app/controller/HomeScreen.js"
+			],
+			[
+				"painlog",
+				"phone/app/model/Painlog.js"
+			],
+			[
+				"charco",
+				"phone/app/controller/register/ChartController.js"
+			],
+			[
+				"storepain",
+				"phone/app/store/PainLog.js"
+			],
+			[
+				"feed.j",
+				"src/field/Field.js"
+			],
+			[
+				"",
+				"phone/app.js"
+			],
+			[
+				"proxy",
+				"phone/app/util/Proxy.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/roman/Sites/filnais/filnais.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 226.0,
+	"status_bar_visible": true
+}

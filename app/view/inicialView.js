@@ -64,12 +64,12 @@ Ext.define('LECTCOMP.view.inicialView', {
 							}
 						]
 					},
-					{ 
+					{
 						xtype: 'image',
 						height: 163,
 						ui: '',
 						width: 155,
-						src: 'img/escut.jpg'                   
+						src: 'img/escut.jpg'
 					}
 				]
 			}
@@ -101,11 +101,11 @@ Ext.define('LECTCOMP.view.inicialView', {
 		var storeVlr = Ext.data.StoreManager.lookup('vialerStore');
 		var storeCmp = Ext.data.StoreManager.lookup('llistaComptadors');
 		if ((storeVlr.getCount()===0) && (storeCmp.getCount()===0)){
-			Ext.Msg.alert("Avís:", 'Vialer i Comtpadors no carregats');			
+			Ext.Msg.alert("Avís:", 'Vialer i Comtpadors no carregats');
 		} else if (storeVlr.getCount()===0) {
-			Ext.Msg.alert("Avís:", 'Vialer no carregat');			
+			Ext.Msg.alert("Avís:", 'Vialer no carregat');
 		} else if (storeCmp.getCount()===0) {
-			Ext.Msg.alert("Avís:", 'Comptadors no carregats');			
+			Ext.Msg.alert("Avís:", 'Comptadors no carregats');
 		} else {
       	var storeIni = Ext.data.StoreManager.lookup('inicialStore');
       	var avui, dataFi, dataInici;
@@ -113,24 +113,58 @@ Ext.define('LECTCOMP.view.inicialView', {
 					avui=new Date();
 					dataFi = this.conversorData(storeIni.getAt(2).get('valorCamp'));
 					dataInici = this.conversorData(storeIni.getAt(1).get('valorCamp'));
-            
+
 					if ((dataInici <= avui) && (avui <= dataFi)) {
 						this.push({xtype:'panellLectures'});
 					} else {
 						Ext.Msg.show({ title: 'Avís:',
 							message: 'Estàs fora del rang de dates permès',
-							buttons:  [{text : 'Acceptar'}]});        
+							buttons:  [{text : 'Acceptar'}]});
 					}
 			} else {
-				Ext.Msg.alert("Avis","Dades Trimestre errònies");     	
+				Ext.Msg.alert("Avis","Dades Trimestre errònies");
 			}
 		}
 	},
 
+
 	onBotoEnviarTap: function(button, e, options) {
-		Ext.Msg.show({ title: 'Avís:',
-			message: 'Dades enviades correctament',
-			buttons:  [{text : 'Acceptar'}]});
+		var storeLect = Ext.data.StoreManager.lookup('lecturesStore');
+		var num = storeLect.getCount( );
+		
+		if (num==0){
+					Ext.Msg.alert("Avís:","No hi ha lectures per enviar");		
+		} else {		
+        	var me = this,
+            	sendStore = Ext.create('Ext.data.Store', {
+                	model: 'LECTCOMP.model.lecturesModel',
+                	data: [],
+                	proxy: {
+                    	type: 'ajax',
+                    	url : 'http://localhost/LECTCOMP/php/rebre-json1.php',
+                	}
+            	}),
+            	storeLect   = Ext.data.StoreManager.lookup('lecturesStore'),
+            	dataToSend  = storeLect.getData(),
+            	arrayToSend = [];
+
+	        dataToSend.each(function (lectura) {
+    	        arrayToSend.push(lectura);
+        	    lectura.setDirty();
+        	});
+
+        	sendStore.getProxy().on('exception', function(proxy, response, operation) {
+            	missatge=response.responseText;
+	            if(missatge == "Registres guardats"){
+					Ext.Msg.alert("Avís:","Dades enviades correctament");
+        		} else {
+        			Ext.Msg.alert("Error:","Dades NO enviades");
+	        	} 
+    	    });
+
+        	sendStore.add(arrayToSend);
+        	sendStore.sync();
+        }
 	},
 
 	conversorData: function(data_dd_mm_yyyy){
@@ -147,8 +181,8 @@ Ext.define('LECTCOMP.view.inicialView', {
 			data_aux.setSeconds(0);
 			data_aux.setMilliseconds(0);
 
-			return data_aux; 
+			return data_aux;
 	}
-		
+
 
 });

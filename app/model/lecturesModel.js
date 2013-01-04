@@ -27,6 +27,6 @@ Ext.define('LECTCOMP.model.lecturesModel', {
 				name: 'incidencia',
   				type: 'string'
   			}
-		]
+		],
 	}
 });

@@ -160,7 +160,6 @@ Ext.define('LECTCOMP.view.panellSeleccio', {
 		);
 		
 		function guardarLectura(reg, vLectura,vNumComptador, vEsVolta, vIncidencia){
-			debugger;
 			var storeLect = Ext.data.StoreManager.lookup('lecturesStore');
 			var vData = new Date();
 

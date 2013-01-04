@@ -1,9 +1,10 @@
 Ext.define('LECTCOMP.view.panellCarregar', {
 	extend: 'Ext.Panel',
-   xtype:'panellCarregar',
+    xtype:'panellCarregar',
 
 	config: {
    	id: 'panellcarregar',
+   	scrollable: 'vertical',
    	layout:{
    		type: 'vbox',
    		align:'strecth',
@@ -14,7 +15,14 @@ Ext.define('LECTCOMP.view.panellCarregar', {
          	xtype: 'titlebar',
             docked: 'top',
             title: 'CARREGAR DADES',
-         },
+            },
+   			{
+				xtype: 'label',
+				id: 'labelTipus',
+				html: '<div align="center"><strong>TIPUS DE CONNEXIÓ:</strong></div>',
+				margin:5,
+ 
+			},
 			{
 				xtype: 'label',
 				html: '<p align="justify">Els procediments marcats amb * necessiten contrasenya per executar-se',
@@ -61,9 +69,20 @@ Ext.define('LECTCOMP.view.panellCarregar', {
             text: 'Lectures introduïdes',
             ui: 'confirm',
             margin:14
-         }
+         },
+         {
+           	xtype: 'button',
+            id: 'btnAdrIp',
+            text: 'Connexió dades remot',
+            ui: 'confirm',
+            margin:14
+         }         
       ],
 		listeners: [
+            {
+                fn: 'onPanellCarregarInitialize',
+                event: 'initialize'
+            },		
 			{
 				fn: 'onBtnCarregarSistema',
 				event: 'tap',
@@ -90,19 +109,33 @@ Ext.define('LECTCOMP.view.panellCarregar', {
 				delegate: '#btnNumLectures'
 			},
 			{
+				fn: 'onbtnAdrIp',
+				event: 'tap',
+				delegate: '#btnAdrIp'
+			},
+			{
 				fn: 'onShow',
 				event: 'show'
 			}			
 		]
 	},
 	
+	onPanellCarregarInitialize: function(component, options) {
+		if (LECTCOMP.app.adr_ip_dades==='http://217.126.56.102:8082'){
+			Ext.ComponentQuery.query('#btnAdrIp')[0].setText('Cambiar connexió dades Local');
+			Ext.ComponentQuery.query('#labelTipus')[0].setHtml('<div align="center"><strong>TIPUS DE CONNEXIÓ: REMOT</strong></div>');				
+		} else {
+			Ext.ComponentQuery.query('#btnAdrIp')[0].setText('Cambiar connexió dades Remot');	
+			Ext.ComponentQuery.query('#labelTipus')[0].setHtml('<div align="center"><strong>TIPUS DE CONNEXIÓ: LOCAL</strong></div>');				
+		}
+	},
+	
 	onBtnCarregarSistema: function(button, e, options) {
 		Ext.Viewport.setMasked({xtype: 'loadmask'
        		       , message: "Inicialitzant..."});
-
-      var storeIni = Ext.data.StoreManager.lookup('inicialStore');
+        var storeIni = Ext.data.StoreManager.lookup('inicialStore');
 		Ext.data.JsonP.request({
- 	      	   url: 'http://localhost/LECTCOMP/json/trimestre.json',
+ 	      	   url: LECTCOMP.app.adr_ip_dades+'/LECTCOMP/json/trimestre.json',
     	      	callbackName: 'inicialCb',
        	   	success: function(result, request) {
 	        			storeIni.removeAll();
@@ -119,7 +152,7 @@ Ext.define('LECTCOMP.view.panellCarregar', {
       
 		var storeClaus = Ext.data.StoreManager.lookup('clausSistema');
 		Ext.data.JsonP.request({
- 	      	   url: 'http://localhost/LECTCOMP/json/claus.json',
+ 	      	   url: LECTCOMP.app.adr_ip_dades+'/LECTCOMP/json/claus.json',
     	      	callbackName: 'clausCb',
        	   	success: function(result, request) {
 	        			storeClaus.removeAll();
@@ -131,9 +164,10 @@ Ext.define('LECTCOMP.view.panellCarregar', {
 	      	   },
       	      failure: function() {
 	            	Ext.Msg.alert("Avis","No hi ha internet o el servidor ha caigut.");
-        			}
+        	  }
       });
       Ext.Viewport.unmask();
+      		
       this.getParent().pop();
 	},
 
@@ -150,7 +184,7 @@ Ext.define('LECTCOMP.view.panellCarregar', {
          		       , message: "Carregant Vialer..."});
 		
 				Ext.data.JsonP.request({
-   	      	   url: 'http://localhost/LECTCOMP/json/vialer.json',
+   	      	   url: LECTCOMP.app.adr_ip_dades+'/LECTCOMP/json/vialer.json',
       	      	callbackName: 'vialerCb',
          	   	success: function(result, request) {
             			storeVlr.removeAll();
@@ -193,7 +227,7 @@ Ext.define('LECTCOMP.view.panellCarregar', {
 				Ext.Viewport.setMasked({xtype: 'loadmask', message: "Carregant Comptadors..."});
 			
 				Ext.data.JsonP.request({
-					url: 'http://localhost/LECTCOMP/json/comptadors.json',
+					url: LECTCOMP.app.adr_ip_dades+'/LECTCOMP/json/comptadors.json',
 					callbackName: 'comtpadorsCb',
 					success: function(result, request) {
 						storeCmpt.removeAll();
@@ -264,7 +298,7 @@ Ext.define('LECTCOMP.view.panellCarregar', {
 		var storeLect = Ext.data.StoreManager.lookup('lecturesStore');
 		var num = storeLect.getCount( );
 		
-		Ext.Msg.alert("Lectures:", num);
+		Ext.Msg.alert("Lectures:",num);
 	},
 	
 	
@@ -280,6 +314,18 @@ Ext.define('LECTCOMP.view.panellCarregar', {
 		}
 		
 		return correcte;
+	},
+	
+	onbtnAdrIp: function(button, e, options) {
+		if (LECTCOMP.app.adr_ip_dades==='http://217.126.56.102:8082'){
+			Ext.ComponentQuery.query('#btnAdrIp')[0].setText('Cambiar connexió dades Remot');
+			Ext.ComponentQuery.query('#labelTipus')[0].setHtml('<div align="center"><strong>TIPUS DE CONNEXIÓ: LOCAL</strong></div>');
+			LECTCOMP.app.adr_ip_dades='http://192.168.1.11:8082';				
+		} else {
+			Ext.ComponentQuery.query('#btnAdrIp')[0].setText('Cambiar connexió dades Local');	
+			Ext.ComponentQuery.query('#labelTipus')[0].setHtml('<div align="center"><strong>TIPUS DE CONNEXIÓ: REMOT</strong></div>');				
+			LECTCOMP.app.adr_ip_dades='http://217.126.56.102:8082';				
+		}
 	},
 	
 	onShow: function(){

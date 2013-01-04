@@ -7,10 +7,10 @@ Ext.define('LECTCOMP.controller.controlador', {
     init: function(application) {
 		Ext.Viewport.setMasked({xtype: 'loadmask'
        		       , message: "Inicialitzant..."});
-
-      var storeIni = Ext.data.StoreManager.lookup('inicialStore');
+		
+      	var storeIni = Ext.data.StoreManager.lookup('inicialStore');
 		Ext.data.JsonP.request({
- 	      	   url: 'http://localhost/LECTCOMP/json/trimestre.json',
+ 	      	   url: LECTCOMP.app.adr_ip_aplicacio+'/LECTCOMP/json/trimestre.json',
     	      	callbackName: 'inicialCb',
        	   	success: function(result, request) {
 	        			storeIni.removeAll();
@@ -21,13 +21,13 @@ Ext.define('LECTCOMP.controller.controlador', {
          			storeIni.sync();
 	      	   },
       	      failure: function() {
-	            	Ext.Msg.alert("Avis","No hi ha internet o el servidor ha caigut.");
-        			}
-      });
+	            	Ext.Msg.alert("Avis","Error al carregar els fitxers.");
+        	  }
+      	});
       
 		var storeClaus = Ext.data.StoreManager.lookup('clausSistema');
 		Ext.data.JsonP.request({
- 	      	   url: 'http://localhost/LECTCOMP/json/claus.json',
+ 	      	   url: LECTCOMP.app.adr_ip_aplicacio+'/LECTCOMP/json/claus.json',
     	      	callbackName: 'clausCb',
        	   	success: function(result, request) {
 	        			storeClaus.removeAll();
@@ -38,8 +38,8 @@ Ext.define('LECTCOMP.controller.controlador', {
          			storeClaus.sync();
 	      	   },
       	      failure: function() {
-	            	Ext.Msg.alert("Avis","No hi ha internet o el servidor ha caigut.");
-        			}
+	            	Ext.Msg.alert("Avis","Error al carregar els fitxers.");
+        	  }
       });
       Ext.Viewport.unmask();
 	}
